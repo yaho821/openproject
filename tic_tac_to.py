@@ -10,23 +10,23 @@ def checking(player, a):    ## a는 O 또는 X
     for l in range(3):  ##가로
         if board[l][0] == board[l][1] == board[l][2] == a:
             print(player, "win!")
-            quit()
+            return
     for l in range(3):  ##세로
         if board[0][l] == board[1][l] == board[2][l] == a:
             print(player, "win!")
-            quit()
+            return
     if board[0][0] == board[1][1] == board[2][2] == a:  ##왼->오 대각선
         print(player, "win!")
-        quit()
+        return
     if board[0][2] == board[1][1] == board[2][0] == a:  ##오->왼 대각선
         print(player, "win!")
-        quit()
-    for l in range(3):
+        return
+    for l in range(3):               ##무승부
         for m in range(3):
             if board[l][m] != ' ':
                 if l == 2 and m == 2:
                     print("draw!")
-                    quit()
+                    return
                 else:
                     continue
             else:
