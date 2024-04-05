@@ -21,7 +21,7 @@ def checking(player, a):    ## a는 O 또는 X
     if board[0][2] == board[1][1] == board[2][0] == a:  ##오->왼 대각선
         print(player, "win!")
         return
-    for l in range(3):               ##무승부
+    for l in range(3):      ##무승부
         for m in range(3):
             if board[l][m] != ' ':
                 if l == 2 and m == 2:
